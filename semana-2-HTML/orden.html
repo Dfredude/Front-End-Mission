@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<head>  
+    <meta lang="en" charset="UTF-8">
+    <meta name="description" content="Pasteles Artesanales">
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ecf0f1 ;
+        }
+        #navegacion, #navegacion li, #navegacion a h3, #navegacion a{
+            background-color: #2ecc71;
+            font-weight:900;
+        }
+
+        #navegacion {
+            border: #3498db 5px solid;
+        }
+
+        h1 {
+            text-align: center;
+            color: #3498db;
+        }
+
+        h2 {
+            padding: 10px 10px;
+            text-align: center;
+        }
+
+        .section {
+            color: #16a085;
+            text-decoration: underline;
+        }
+
+        li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        a {
+            color: #2980b9;
+        }
+
+        input[type=submit]{
+            display: block;
+            width: 70pt;
+            padding: 5px ;
+            margin: auto;
+            
+        }
+
+        .select {
+            margin: 0 0 30pt;
+        }
+
+        .ingredients {
+            font-size: large;
+            display: list-item;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="header">
+        <ul id="navegacion">
+            <li>
+                <a href="./index.html"><h3>Home</h3></a>
+            </li>
+            <li>
+                <a href="./index.html#menu"><h3>Menu</h3></a>
+            </li>
+            <li>
+                <a href="./contactanos.html"><h3>Contactanos</h3></a>
+            </li>
+            <li>
+                <a href="./login.html"><h3>Entrar</h3></a>
+            </li>
+        </ul>
+    </nav>
+    <img src="./images/cake.jpg" alt="Imagen de un pastel" 
+        width="60%" style="display: block; margin: auto;">
+        <h1>Pasteleria</h1>
+    <section id="info">
+
+    </section>
+    <div id="footer">
+        <ul id="navegacion">
+            <li style="background-color: #2ecc71; display: block; text-align: right; height: 50pt;">
+            </li>
+        </ul>
+    </div>
+    <script>
+    const isInArray = (string, array) => {
+        let result = false;
+        for (item of array){
+            if (string === item){
+                result = true;
+                break;
+            }
+        }
+        return result;
+    }
+
+        let request = window.location.href.split("?")
+        parameters = request[1]
+        if (parameters != ""){
+            parameters = parameters.split("&")
+            let customer_info = ["nombre", "telefono", "e-mail", "comentarios"]
+            let important_parameters = 0;
+            let order = "<ul>"
+            for (let i=0; i<parameters.length; i++){
+                item = parameters[i].split("=")[0]
+                if (isInArray(item, customer_info)) i = parameters.length
+                else {
+                    item = item.charAt(0).toUpperCase() + item.slice(1)
+                    index = item.indexOf("-")
+                    if (index != -1) {
+                        let actual_item = "";
+                        for (word of item.split("-")){
+                            actual_item += word + " "
+                        }
+                        order += `<li class="ingredients">${actual_item}-----$5<div>`
+                    }
+                    else {
+                        order += `<li class="ingredients">${item}-----$5<div>`
+                    }
+                    important_parameters++;
+                }
+            }
+            if (important_parameters > 0){
+                order += "</ul>"
+                element = document.getElementById("info")
+                element.innerHTML = `<h2>Tu pedido de pastel</h2>
+                <h3>Sabor(es) y/o adorno(s)</h2>
+                ${order}
+                Se proceso exitosamente. Gracias por su compra!`
+            }
+            else {
+                element = document.getElementById("info")
+            element.innerHTML = `<h2 style="color: #c0392b;">Por favor seleccione al menos un sabor para su pastel</h2><h3>Pedido no procesado :c</h3>`    
+            }
+        }
+        else {
+            element = document.getElementById("info")
+            element.innerHTML = `<h2 style="color: #c0392b;">Por favor seleccione al menos un sabor para su pastel</h2><h3>Pedido no procesado :c</h3>`
+        }
+        
+    
+
+    </script>

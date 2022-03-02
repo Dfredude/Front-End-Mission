@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>  
+    <meta lang="en" charset="UTF-8">
+    <meta name="description" content="Pasteles Artesanales">
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ecf0f1 ;
+        }
+        #navegacion, #navegacion li, #navegacion a h3, #navegacion a{
+            background-color: #2ecc71;
+            font-weight:900;
+        }
+
+        #navegacion {
+            border: #3498db 5px solid;
+        }
+
+        h1 {
+            text-align: center;
+            color: #3498db;
+        }
+
+        h2 {
+            padding: 10px 10px;
+            text-align: center;
+        }
+
+        .section {
+            color: #16a085;
+            text-decoration: underline;
+        }
+
+        li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        a {
+            color: #2980b9;
+        }
+
+        input[type=submit]{
+            display: block;
+            width: 70pt;
+            padding: 5px ;
+            margin: auto;
+            
+        }
+
+        .select {
+            margin: 0 0 30pt;
+        }
+
+        #info-de-cliente li{
+            display: block;
+            padding: 5pt;
+        }
+
+        #info-de-cliente li label {
+            display: inline-block;
+            width: 80pt;
+        }
+
+        #comentarios-de-la-orden {
+            width: 80%;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="header">
+        <ul id="navegacion">
+            <li>
+                <a href="./index.html"><h3>Home</h3></a>
+            </li>
+            <li>
+                <a href="./index.html#menu"><h3>Menu</h3></a>
+            </li>
+            <li>
+                <a href="./contactanos.html"><h3>Contactanos</h3></a>
+            </li>
+            <li>
+                <a href="./login.html"><h3>Entrar</h3></a>
+            </li>
+        </ul>
+    </nav>
+    <form action="./dahsboard.html">
+        <ul>
+            <li>
+                <label for="user">Usuario</label>
+                <input name="user" type="text">
+            </li>
+            <li>
+                <label for="password">Password</label>
+                <input name="password" type="password">
+            </li>
+        </ul>
+        <input type="submit" value="Entrar">
+    </form>
