@@ -3,22 +3,35 @@
     <meta lang="en" charset="UTF-8">
     <meta name="description" content="Pasteles Artesanales">
     <style>
-        * {
+       * {
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #ecf0f1 ;
         }
+
+        body {
+            background-color: rgb(255, 203, 101) ;
+            margin: 0px;
+        }
+
         #navegacion, #navegacion li, #navegacion a h3, #navegacion a{
-            background-color: #2ecc71;
+            background-color: #d17600;
             font-weight:900;
         }
 
         #navegacion {
-            border: #3498db 5px solid;
+            margin: 0px 0px 0px 0px;
+        }
+
+        #cover {
+            display: block;
+            width: 100%;
+            max-height: 480px;
+            max-width: 720px;
+            margin: 20px auto auto auto;
         }
 
         h1 {
             text-align: center;
-            color: #3498db;
+            color: #8a4500;
         }
 
         h2 {
@@ -27,8 +40,8 @@
         }
 
         .section {
-            color: #16a085;
-            text-decoration: underline;
+            color: #ad5a00;
+            font-weight: bold;
         }
 
         li {
@@ -36,7 +49,7 @@
             margin-right: 20px;
         }
         a {
-            color: #2980b9;
+            color: rgb(255, 203, 101);
         }
 
         input[type=submit]{
@@ -69,7 +82,7 @@
 </head>
 <body>
     <nav class="header">
-        <ul id="navegacion">
+        <ul id="navegacion" style="border-bottom: #8a4500 2px solid;">
             <li>
                 <a href="./index.html"><h3>Home</h3></a>
             </li>
@@ -84,7 +97,7 @@
             </li>
         </ul>
     </nav>
-    <form action="./dahsboard.html">
+    <form action="./dashboard.html">
         <ul>
             <li>
                 <label for="user">Usuario</label>

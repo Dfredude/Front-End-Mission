@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<head>  
+    <meta lang="en" charset="UTF-8">
+    <meta name="description" content="Pasteles Artesanales">
+    <link rel="stylesheet" href="admin.css">
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: rgb(255, 203, 101) ;
+            margin: 0px;
+        }
+
+        #navegacion, #navegacion li, #navegacion a h3, #navegacion a{
+            background-color: #d17600;
+            font-weight:900;
+        }
+
+        #navegacion {
+            margin: 0px 0px 0px 0px;
+        }
+
+        #cover {
+            display: block;
+            width: 100%;
+            max-height: 480px;
+            max-width: 720px;
+            margin: 20px auto auto auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #8a4500;
+        }
+
+        h2 {
+            padding: 10px 10px;
+            text-align: center;
+        }
+
+        .section {
+            color: #ad5a00;
+            font-weight: bold;
+        }
+
+        li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        a {
+            color: rgb(255, 203, 101);
+        }
+
+        input[type=submit]{
+            display: block;
+            width: 70pt;
+            padding: 5px ;
+            margin: auto;
+            
+        }
+
+        .select {
+            margin: 0 0 30pt;
+        }
+
+        #info-de-cliente li{
+            display: block;
+            padding: 5pt;
+        }
+
+        #info-de-cliente li label {
+            display: inline-block;
+            width: 80pt;
+        }
+
+        #comentarios-de-la-orden {
+            width: 80%;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="header">
+        <ul id="navegacion" style="border-bottom: #8a4500 2px solid;">
+            <li>
+                <a href="./index.html"><h3>Home</h3></a>
+            </li>
+            <li>
+                <a href="./index.html#menu"><h3>Menu</h3></a>
+            </li>
+            <li>
+                <a href="./contactanos.html"><h3>Contactanos</h3></a>
+            </li>
+            <li>
+                <a href="./login.html"><h3>Entrar</h3></a>
+            </li>
+        </ul>
+    </nav>
+    <div id="response" ></div>
+    <script>
+        let url = window.location.href
+        let params = url.split("?")
+        params = params[1]
+        let [user, password] = params.split("&")
+        user = user.split("=")[1]
+        password = password.split("=")[1]
+        element = document.getElementById("response")
+        if (user === "admin" && password === "admin"){
+            element.innerHTML = `<div id="wrapper">
+
+<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">Admin</sup></div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+        <a class="nav-link" href=${url}>
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span></a>
+    </li>
+
+    <li class="nav-item active">
+        <a class="nav-link" href=${url}>
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Inventario</span></a>
+    </li>
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+    <li class="nav-item active">
+        <a class="nav-link" href="index.html">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Salir</span></a>
+    </li>
+
+</ul>
+<!-- End of Sidebar -->
+
+<!-- Content Wrapper -->
+<div id="content-wrapper" class="d-flex flex-column">
+
+    <!-- Main Content -->
+    <div id="content">
+
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">Pedidos</h1>
+                <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                        class="fas fa-download fa-sm text-white-50"></i> Generar reporte</a>
+            </div>
+
+            <!-- Content Row -->
+            <div class="row">
+
+                <!-- Earnings (Monthly) Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-primary shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                        Pastel de fresa</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">$5</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Earnings (Monthly) Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-success shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                        Pastel de chocolate con chispas</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">$10</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Earnings (Monthly) Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-info shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Pastel de chocolate con glaseado
+                                    </div>
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col-auto">
+                                            <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">10$</div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="progress progress-sm mr-2">
+                                                <div class="progress-bar bg-info" role="progressbar"
+                                                    style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                                    aria-valuemax="100"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pending Requests Card Example -->
+                <div class="col-xl-3 col-md-6 mb-4">
+                    <div class="card border-left-warning shadow h-100 py-2">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2">
+                                    <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                        Pastel de fresa con chocolate</div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-comments fa-2x text-gray-300"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; Your Website 2021</span>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+
+</div>
+<!-- End of Content Wrapper -->
+
+</div>`
+        }
+        else {
+            element.innerHTML = "Wrong username and/or password"
+        }
+    </script>
+</body>

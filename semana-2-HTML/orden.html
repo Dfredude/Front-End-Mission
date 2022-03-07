@@ -5,20 +5,25 @@
     <style>
         * {
             font-family: Arial, Helvetica, sans-serif;
-            background-color: #ecf0f1 ;
         }
+
+        body {
+            background-color: rgb(255, 203, 101) ;
+            margin: 0px;
+        }
+
         #navegacion, #navegacion li, #navegacion a h3, #navegacion a{
-            background-color: #2ecc71;
+            background-color: #d17600;
             font-weight:900;
         }
 
         #navegacion {
-            border: #3498db 5px solid;
+            margin: 0px 0px 0px 0px;
         }
 
         h1 {
             text-align: center;
-            color: #3498db;
+            color: #8a4500;
         }
 
         h2 {
@@ -27,8 +32,8 @@
         }
 
         .section {
-            color: #16a085;
-            text-decoration: underline;
+            color: #ad5a00;
+            font-weight: bold;
         }
 
         li {
@@ -36,7 +41,7 @@
             margin-right: 20px;
         }
         a {
-            color: #2980b9;
+            color: rgb(255, 203, 101);
         }
 
         input[type=submit]{
@@ -60,7 +65,7 @@
 </head>
 <body>
     <nav class="header">
-        <ul id="navegacion">
+        <ul id="navegacion" style="border-bottom: #8a4500 2px solid;">
             <li>
                 <a href="./index.html"><h3>Home</h3></a>
             </li>
@@ -82,8 +87,8 @@
 
     </section>
     <div id="footer">
-        <ul id="navegacion">
-            <li style="background-color: #2ecc71; display: block; text-align: right; height: 50pt;">
+        <ul id="navegacion" style="border-top: #8a4500 2px solid;">
+            <li style="background-color: #d17600; display: block; text-align: right; height: 50pt;">
             </li>
         </ul>
     </div>
@@ -103,13 +108,18 @@
         parameters = request[1]
         if (parameters != ""){
             parameters = parameters.split("&")
+            console.log(parameters);
             let customer_info = ["nombre", "telefono", "e-mail", "comentarios"]
             let important_parameters = 0;
             let order = "<ul>"
             for (let i=0; i<parameters.length; i++){
-                item = parameters[i].split("=")[0]
-                if (isInArray(item, customer_info)) i = parameters.length
+                let item = parameters[i].split("=")[0]
+                console.log(item);
+                if (isInArray(item, customer_info)) {
+                    break
+                }
                 else {
+                    console.log(item);
                     item = item.charAt(0).toUpperCase() + item.slice(1)
                     index = item.indexOf("-")
                     if (index != -1) {
