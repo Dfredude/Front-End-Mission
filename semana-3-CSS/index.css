@@ -45,11 +45,15 @@ a.nav-links {
     text-decoration: solid;
 }
 
-h2, h3, h4 {
+h2, h3 {
     color: var(--dark-blue);
 }
 
-#blue-button {
+h4 {
+    color: var(--gray);
+}
+
+.blue-button {
     background-color: var(--button_color);
     color: aliceblue;
     border: 0;
@@ -83,11 +87,12 @@ h2, h3, h4 {
     /* display: flex;
     justify-content: space-around;
     align-content: center; */
-    bottom: -310px;
+    bottom: -10px;
+    left: 50px;
     height: 150px;
     display: flex;
     justify-content: space-around;
-    align-content: center;
+    align-items: center;
     background-color: rgb(255, 255, 255, .8);
     border-radius: 10px 10px;
     box-shadow: 5px 15px 25px 3px #888888;
