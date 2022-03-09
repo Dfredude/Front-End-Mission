@@ -49,8 +49,20 @@ h2, h3 {
     color: var(--dark-blue);
 }
 
-h4 {
+h4, p {
     color: var(--gray);
+}
+
+h2{
+    font-size: 35pt;
+}
+
+h3 {
+    font-size: x-large;
+}
+
+h4 {
+    font-size: large;
 }
 
 .blue-button {
@@ -65,20 +77,49 @@ h4 {
 
 .container {
     width: 100%;
+    margin-bottom: 10px;
 }
 
-.container>:not(.location-bar){
+#one {
+    background-image: url("./images/background-1.png");
+    background-size: 50% 100%;
+}
+
+#one>:not(.location-bar){
     display: inline-block;
     width: 49.8%;
-    margin: 0px 0px;
     padding: 0 0;
-    vertical-align: middle;
+    vertical-align: bottom;
 }
 
-.left-division *{
+.left-division {
+    margin-bottom: 350px;
+    height: 50%;
+    width: 50%;
+}
+
+.left-division>*{
     display: block;
-    margin: auto;
-    width: 70%;
+    margin: 30px auto;
+    width: 50%;
+}
+
+.left-division>h2 {
+    margin-top: 0px;
+}
+
+.left-division ul {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.left-division ul *{
+    display: inherit;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: bold;
 }
 
 .location-bar {
@@ -87,27 +128,68 @@ h4 {
     /* display: flex;
     justify-content: space-around;
     align-content: center; */
-    bottom: -10px;
+    bottom: 10px;
     left: 50px;
-    height: 150px;
+    height: 75pt;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(255, 255, 255, .8);
+    background-color: rgb(255, 255, 255, .85);
     border-radius: 10px 10px;
     box-shadow: 5px 15px 25px 3px #888888;
 }
 
-.location-bar img{
+.icon{
     width: 30px;
     height: 30px;
 }
 
-.location-bar>div {
-   display: inherit;
-   justify-content: space-evenly;
-   align-content: center;
+.location-bar>div>:not(h3){
+   display: inline-block;
 }
 
+.location-bar h3 {
+    margin: 2px 0px 2px 35px;
+}
 
+#horizontal-banner {
+    display: block;
+    width: 80%;
+    margin: auto auto 15px auto;
+}
+
+#two {
+    height: 500px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#two img {
+    height: 50px;
+    width: 50px;
+}
+
+#two>p, #two>h2 {
+    width: 25%;
+    margin-left: 7vw;
+}
+
+#benefits {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 0;
+}
+
+#benefits>div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 200px;
+    height: 240px;
+    /* border: 0px solid black; */
+    border-radius: 10px 10px;
+    box-shadow: 1px 10px 35px -30px #888888;
+    padding: 10px 20px;
+}
 
