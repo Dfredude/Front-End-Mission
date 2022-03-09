@@ -75,27 +75,21 @@ h4 {
     font-size:medium;
 }
 
-.container {
+.container{
     width: 100%;
     margin-bottom: 10px;
+    font-size: 0;
 }
 
-#one {
-    background-image: url("./images/background-1.png");
-    background-size: 50% 100%;
-}
-
-#one>:not(.location-bar){
-    display: inline-block;
-    width: 49.8%;
-    padding: 0 0;
-    vertical-align: bottom;
+.container>* {
+    font-size: medium;
 }
 
 .left-division {
-    margin-bottom: 350px;
+    display: inline-block;
     height: 50%;
     width: 50%;
+    vertical-align: top;
 }
 
 .left-division>*{
@@ -122,6 +116,29 @@ h4 {
     font-weight: bold;
 }
 
+.right-division {
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+    height: 593px;
+}
+
+#one {
+    background-image: url("./images/background-1.png");
+    background-size: 50% 100%;
+}
+
+#one>:not(.location-bar){
+    display: inline-block;
+    width: 50%;
+    padding: 0 0;
+    vertical-align: bottom;
+}
+
+#one .left-division {
+    margin-bottom: 350px;    
+}
+
 .location-bar {
     position: absolute;
     width: 70%;
@@ -137,6 +154,18 @@ h4 {
     background-color: rgb(255, 255, 255, .85);
     border-radius: 10px 10px;
     box-shadow: 5px 15px 25px 3px #888888;
+}
+
+#bar-title {
+    position: absolute;
+    top: -35pt;
+    left: 10pt;
+}
+
+#bar-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .icon{
@@ -170,15 +199,15 @@ h4 {
     width: 50px;
 }
 
-#two>p, #two>h2 {
+#two>div:first-child {
     width: 25%;
-    margin-left: 7vw;
+    margin-left: 10vw;
 }
 
 #benefits {
     display: flex;
     justify-content: space-around;
-    margin: 0 0;
+    margin: 0 25px;
 }
 
 #benefits>div{
@@ -192,4 +221,30 @@ h4 {
     box-shadow: 1px 10px 35px -30px #888888;
     padding: 10px 20px;
 }
+
+#three {
+    padding-right: 50px;
+}
+
+.dropdown {
+    margin: 20px 0;
+    width: 70%;
+    left: 0px;
+}
+
+.dropdown li{
+    text-decoration: none;
+    margin: 15px 0;
+    list-style-type: none;
+}
+
+.dropdown li *:not(.icon) {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.dropdown .icon {
+   float: right;
+}
+
 
