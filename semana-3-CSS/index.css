@@ -70,14 +70,25 @@ h4 {
     color: aliceblue;
     border: 0;
     border-radius: 5px 5px;
-    padding: 10pt 15pt;
+    padding: 15pt 20pt;
     font-weight: 600;
-    font-size:medium;
+    font-size:large;
+}
+
+.gray-button {
+    background-color: #f1f5ff;
+    color: var(--blue);
+    border: 0;
+    border-radius: 5px 5px;
+    padding: 15pt 20pt;
+    font-weight: 600;
+    font-size:large;
 }
 
 .container{
+    /* display: inline-block; */
     width: 100%;
-    margin-bottom: 10px;
+    margin: 20px 0;
     font-size: 0;
 }
 
@@ -120,10 +131,10 @@ h4 {
     display: inline-block;
     vertical-align: top;
     width: 50%;
-    height: 593px;
 }
 
 #one {
+    margin-top: 0;
     background-image: url("./images/background-1.png");
     background-size: 50% 100%;
 }
@@ -226,6 +237,22 @@ h4 {
     padding-right: 50px;
 }
 
+#three .left-division>img{
+    float: left;
+}
+
+#three .left-division {
+    width: 40%;
+}
+
+#three .right-division {
+    width: 60%;
+}
+
+#three .right-division>* {
+    margin: 25px 0;
+}
+
 .dropdown {
     margin: 20px 0;
     width: 70%;
@@ -234,7 +261,7 @@ h4 {
 
 .dropdown li{
     text-decoration: none;
-    margin: 15px 0;
+    margin: 25px 0;
     list-style-type: none;
 }
 
@@ -245,6 +272,50 @@ h4 {
 
 .dropdown .icon {
    float: right;
+}
+
+#four .left-division {
+    width: 60%;
+}
+
+#four .right-division {
+    width: 40%;
+}
+
+#four .right-division>img{
+    float: right;
+}
+
+#four .left-division>div {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+article {
+    text-align: center;
+    width: auto;
+    border-radius: 10px 10px;
+    box-shadow: 2px 7px 50px -40px #888888;
+    margin-bottom: 30px;
+    padding: 25px 30px;
+}
+
+article>*:not(button) {
+    display: inline-block;
+    margin: 5px 15px;
+}
+
+article button {
+    width: 75%;
+    display: block;
+    margin: 15px auto;
+}
+
+footer {
+
 }
 
 
