@@ -1,11 +1,12 @@
 <script>
-import Cake from "./Cake.vue"
+
 import Cakes from "./Cakes.vue"
+import DivisionBar from "./Utils/DivisionBar.vue"
 
 export default {
     components: {
-    Cake,
-    Cakes
+    Cakes,
+    DivisionBar
 },
     data() {
         return {
@@ -16,34 +17,23 @@ export default {
 </script>
 
 <template>
-    <form action="./orden.html">
-        <label class="section" for="pasteles">Cakes</label>
-            <Cakes />
-        <label for="informacion" class="section">Informacion de contacto</label>
-        <ul id="info-de-cliente" name="informacion" class="select">
-            <li>
-                <label for="nombre">Nombre</label>
-                <input name="nombre" required>
-            </li>
-            <li>
-                <label for="telefono">Telefono</label>
-                <input name="telefono" required>
-            </li>
-            <li>
-                <label for="e-mail">e-mail</label>
-                <input type="email" name="e-mail" required>
-            </li>
-            <li>
-                <label for="comentarios">Comentarios</label>
-                <input id="comentarios-de-la-orden" type="text" name="comentarios">
-            </li>
-        </ul>
-        <input type="submit" value="Order Now">
+    <form id="order" action="./order-form">
+        <Cakes />
+        <button class="button" type="submit">Order Now</button>
+        <DivisionBar />
     </form>
 </template>
 
 <style scoped>
     ul{
         display: flex;
+    }
+
+    form {
+        text-align: center;
+    }
+
+    button {
+        margin: 40px 0;
     }
 </style>

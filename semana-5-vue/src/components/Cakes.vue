@@ -1,5 +1,4 @@
 <script>
-    import Cake from "./Cake.vue"
 
     export default {
         data() {
@@ -22,19 +21,19 @@
 </script>
 
 <template>
-    <div class="cakes">
+    <ul class="cakes">
         <li v-for="{ id, name, thumbnail} of commits " :key="id">
             <label :for="name">{{ name }}</label>
             <img :src="thumbnail">
             <div>
                 <h4>Add to cart</h4>
                 <label class="container">
-                    <input type="checkbox" checked="checked">
+                    <input :name="name" type="checkbox">
                     <span class="checkmark"></span>
                 </label>
             </div>
         </li>
-    </div>
+    </ul>
 </template>
 
 <style scoped>
@@ -55,7 +54,7 @@
     
 
     img {
-        height: 200px;
+        height: 170px;
     }
 
     li {
@@ -68,8 +67,8 @@
         color: var(--header-background);
         list-style: none;
         border-radius: 25px;
-        width: 350px;
-        height: 350px;
+        width: 250px;
+        height: 250px;
         text-align: center;
         /* box-shadow: 0 0 10px 10px var(--chocolate-background-color); */
     }

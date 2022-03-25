@@ -5,20 +5,20 @@
         <nav>
             <ul>
                 <li>
-                    <a href="./index.html"><img src="../assets/images/cake.png" alt="Logo"></a>
+                    <router-link to="/"><img src="../assets/images/cake.png" alt="Logo"></router-link>
                 </li>
                 <li>
-                    <a href="./index.html#menu"><h3>Shop</h3></a>
+                    <a href="/#order"><h3>Shop</h3></a>
                 </li>
                 <li>
-                    <a href="./contactanos.html"><h3>Contact</h3></a>
+                    <router-link to="/contactanos"><h3>Contact</h3></router-link>
                 </li>
             </ul>
         </nav>
         <nav id="fix">
             <ul>
                 <li>
-                    <a href="./login"><h3>Account</h3></a>
+                    <router-link to="/login"><h3>Account</h3></router-link>
                 </li>
                 <li>
                     <img src="../assets/images/shopping-cart.png" alt="shopping-cart">
@@ -64,11 +64,6 @@
 
     img {
         height: 30px;
-    }
-
-    a {
-        color: var(--chocolate-font);
-        text-decoration: none;
     }
 
 

@@ -1,20 +1,29 @@
-<script setup>
-import Header from './components/Header.vue'
-import Order from './components/Order.vue';
-import Footer from './components/Footer.vue'
-import Trends from './components/Trends.vue'
+<script>
+  import Header from './components/Header.vue'
+  import Footer from './components/Footer.vue'  
+  export default {
+    data() {
+      return {
+        cart: []
+      }
+    },
+    components: {
+      Header,
+      Footer
+    }
+  }
+
 
 </script>
 
 <template>
   <div>
-  <Header></Header>
-  <Trends />
-  <Order></Order>
-  <Footer></Footer>
-  <main>
-    
-  </main>
+    <Header/>
+    <main>
+      <router-view></router-view>
+    </main>
+    <Footer/>
+  
   </div>
 </template>
 
@@ -46,6 +55,25 @@ import Trends from './components/Trends.vue'
   h2 {
     font-size: xx-large;
   }
+
+  button {
+    cursor: pointer;
+  }
+
+  .button {
+        background: var(--chocolate-background-color);
+        padding: 10px;
+        color: white;
+        width: 200px;
+        font-size: large;
+        border-radius: 20px;
+        border: 1px solid white;
+    }
+
+  a {
+        color: var(--chocolate-font);
+        text-decoration: none;
+    }
 
 
 
