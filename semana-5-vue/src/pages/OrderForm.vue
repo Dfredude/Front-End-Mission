@@ -17,11 +17,21 @@ export default {
     },
     methods: {
         submit() {
-            this.cakes.forEach(cake => {
-            this.$store.commit('addCake', cake)
-            });
-            console.log(this.submitted);
+            const order = this.getInput()
+            this.$store.commit('addOrder', order)
             this.submitted = true
+            
+        },
+        getInput(){
+            const [name, phone, e_mail, comments] = document.querySelectorAll("input")
+            const cakes = this.cakes
+            return {
+                name : name.value,
+                phone : phone.value,
+                e_mail : e_mail.value,
+                cakes : cakes,
+                comments : comments.value
+            }
         }
     },
     computed: {

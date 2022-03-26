@@ -1,12 +1,12 @@
 <script>
 export default {
     created() {
-        this.cakes = this.$store.state.cakes
-        console.log(this.$store.state.cakes);
+        this.orders = this.$store.state.orders
+        console.log(this.$store.state.orders);
     },
     computed: {
-        cakes () {
-            return this.$store.state.cakes
+        orders () {
+            return this.$store.state.orders
         }
     }
 }
@@ -15,15 +15,16 @@ export default {
 <template>
     <section>
         <h1>Pending orders:</h1>
-        <div id="orders" :key="cake" v-for="cake in cakes">
-            <h2>{{ cake }}</h2>
-            <h4>$20 USD</h4>
+        <div id="orders" :key="name" v-for="{ name, phone, cakes } in orders">
+            <h2>{{ name }}</h2>
+            <h3>{{ phone }}</h3>
+            <h4 :key="cake" v-for="cake in cakes">{{ cake }}</h4>
         </div>
     </section>
 </template>
 
 <style scoped>
-    h1, h2, h4{
+    h1, h2, h3, h4{
         color: black;
     }
 

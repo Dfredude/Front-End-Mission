@@ -10,15 +10,21 @@ import { createStore } from 'vuex'
 export const store = createStore({
   state () {
     return {
-      cakes: ["test"]
+      orders: [{
+        name: "John Doe",
+        phone: "65416516",
+        e_mail: "jdoe@mail.com",
+        cakes: ["Vietnamese Cream Caramel Flan", "Salted Egg Sponge Cake - Bong Lan Trung Muoi"],
+        comments: "test"
+      }]
     }
   },
   mutations: {
-    addCake(state, cake) {
-      state.cakes.push(cake)
+    addOrder(state, order) {
+      state.orders.push(order)
     },
-    shiftCake(state){
-      state.cakes.shift()
+    shiftorder(state){
+      state.orders.shift()
     }
   }
 })

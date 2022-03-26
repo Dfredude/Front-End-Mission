@@ -5,7 +5,8 @@
                 <h4>PASTRY FROM KRISTI</h4>
                 <h2>FRESH BAKED TO YOUR DOOR</h2>
                 <p>Bringing the smell and taste of your favorite pancakes to your door. By fresh we mean natural...</p>
-                <button>Shop All Pastries</button>
+                <a href="/#order"><button>Shop All Pastries</button></a>
+                
             </div>
         </div>
         <div class="right-container">
