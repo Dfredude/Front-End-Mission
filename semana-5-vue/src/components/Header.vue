@@ -18,7 +18,7 @@
         <nav id="fix">
             <ul>
                 <li>
-                    <router-link to="/login"><h3>Account</h3></router-link>
+                    <router-link to="/admin"><h3>Account</h3></router-link>
                 </li>
                 <li>
                     <img src="../assets/images/shopping-cart.png" alt="shopping-cart">

@@ -54,7 +54,7 @@
     
 
     img {
-        height: 170px;
+        height: 230px;
     }
 
     li {
@@ -62,15 +62,14 @@
         justify-content: space-around;
         margin: 10px 5px;
         padding: 20px;
-        background-color: #BC6868;
         flex-direction: column;
-        color: var(--header-background);
+        color: black;
         list-style: none;
         border-radius: 25px;
-        width: 250px;
-        height: 250px;
+        width: 350px;
+        height: 300px;
         text-align: center;
-        /* box-shadow: 0 0 10px 10px var(--chocolate-background-color); */
+        box-shadow: 5px 0 15px -4px gray
     }
 
     li>div>* {
@@ -81,7 +80,6 @@
 
     label {
         font-size: large;
-        color: white;
     }
 
     .container {
@@ -112,11 +110,11 @@
   left: 0;
   height: 25px;
   width: 25px;
-  background-color: #eee;
+  background-color: #ccc;
 }
 
     .container:hover input ~ .checkmark {
-    background-color: #ccc;
+    background-color: var(--light-gray-font);
     }
 
     /* When the checkbox is checked, add a blue background */

@@ -63,7 +63,7 @@
     img{
         display: block;
         width: 80%;
-        max-width: 850px;
+        max-width: 800px;
         margin: 10px auto;
         max-height: 90%;
         border-radius: 25px;

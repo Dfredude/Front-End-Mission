@@ -18,6 +18,7 @@ export default {
 
 <template>
     <form id="order" action="./order-form">
+        <h1>Order any of these delicous and healthy cakes!</h1>
         <Cakes />
         <button class="button" type="submit">Order Now</button>
         <DivisionBar />
@@ -25,6 +26,11 @@ export default {
 </template>
 
 <style scoped>
+    h1{
+        color: black;
+        margin: 3vh;
+    }
+    
     ul{
         display: flex;
     }
