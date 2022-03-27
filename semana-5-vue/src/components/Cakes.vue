@@ -6,15 +6,8 @@
                 commits: null
             }
         },
-        created() {
-            this.fetchData()
-        },
-        methods: {
-            async fetchData() {
-                 const response = await fetch("https://my-cake-server.herokuapp.com/api/allcakes")
-                 this.commits = await response.json()
-                 console.log(this.commits);
-                }
+        props: {
+            cakes: Array
         },
     }
 
@@ -22,7 +15,7 @@
 
 <template>
     <ul class="cakes">
-        <li v-for="{ id, name, thumbnail} of commits " :key="id">
+        <li v-for="{ id, name, thumbnail} of cakes " :key="id">
             <label :for="name">{{ name }}</label>
             <img :src="thumbnail">
             <div>

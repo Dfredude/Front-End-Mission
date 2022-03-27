@@ -5,20 +5,20 @@
         <nav>
             <ul>
                 <li>
-                    <router-link to="/"><img src="../assets/images/cake.png" alt="Logo"></router-link>
+                    <router-link to="./"><img src="../assets/images/cake.png" alt="Logo"></router-link>
                 </li>
                 <li>
-                    <a href="/#order"><h3>Shop</h3></a>
+                    <a href=".#order"><h3>Shop</h3></a>
                 </li>
-                <li>
+                <!-- <li>
                     <router-link to="/contactanos"><h3>Contact</h3></router-link>
-                </li>
+                </li> -->
             </ul>
         </nav>
         <nav id="fix">
             <ul>
                 <li>
-                    <router-link to="/admin"><h3>Account</h3></router-link>
+                    <router-link to="./admin"><h3>Account</h3></router-link>
                 </li>
                 <li>
                     <img src="../assets/images/shopping-cart.png" alt="shopping-cart">

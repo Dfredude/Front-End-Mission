@@ -28,14 +28,22 @@ export const store = createStore({
     }
   }
 })
-
-  const routes = [
-    { path: '/', component: Home },
-    { path: '/cart', component: Cart },
-    { path: '/order-form', component: OrderForm },
-    { path: '/place-order', component: OrderPlaced },
-    { path: '/admin', component: Admin}
-  ]
+  let routes
+  process.env.NODE_ENV === 'production'
+    ? routes = [
+      { path: '/Front-End-Mission', component: Home },
+      { path: '/Front-End-Mission/cart', component: Cart },
+      { path: '/Front-End-Mission/order-form', component: OrderForm },
+      { path: '/Front-End-Mission/place-order', component: OrderPlaced },
+      { path: '/Front-End-Mission/admin', component: Admin}
+    ]
+    : routes = [
+      { path: '/', component: Home},
+      { path: '/cart', component: Cart },
+      { path: '/order-form', component: OrderForm },
+      { path: '/place-order', component: OrderPlaced },
+      { path: '/admin', component: Admin}
+    ]
 
   export const router = createRouter({
     history: createWebHistory(),
