@@ -7,7 +7,8 @@
             }
         },
         props: {
-            cakes: Array
+            cakes: Array,
+            inputCheck: Function
         },
     }
 
@@ -21,7 +22,7 @@
             <div>
                 <h4>Add to cart</h4>
                 <label class="container">
-                    <input :name="name" type="checkbox">
+                    <input :name="name" type="checkbox" v-on:change="inputCheck">
                     <span class="checkmark"></span>
                 </label>
             </div>
