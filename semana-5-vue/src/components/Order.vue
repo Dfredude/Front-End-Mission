@@ -9,7 +9,8 @@ export default {
             valid_input: false,
             commits: null,
             loading: true,
-            inputs: null
+            inputs: null,
+            cakes : []
         }
     },
     created() {
@@ -29,35 +30,27 @@ export default {
                  this.loading = false
                 },
             onInputChange() {
-                for (let input of document.querySelectorAll('input')){
-                    if (input.checked){
-                        this.valid_input = true
-                        break
-                    }
-                    this.valid_input = false
-                }
-            },
-            wrongInput() {
-                console.log("test");
-                console.log(document.getElementById("pop-up"));
-                
+                console.log(this.$store.getters.cacheLen); 
+                if (this.$store.getters.cacheLen>0){
+                    this.valid_input = true
+                } else this.valid_input = false
+                console.log(this.valid_input);
             }
-            
         },
 }
 </script>
 
 <template>
     <section>
-        <form v-if="loading===false" id="order" action="./order-form">
+        <form v-if="loading===false" id="order" @submit.prevent="submit">
         <h1>Order any of these delicous and healthy cakes!</h1>
         <Cakes :cakes="commits" :inputCheck="onInputChange"/>
         <div v-if="valid_input===false">
-            <button class="button" type="submit" @click="wrongInput" disabled>Order Now</button>
+            <button class="button" type="submit" disabled>Order Now</button>
             <p style="color: black;" id="pop-up">Please select at least one option before submitting</p>
         </div>
         <div v-else>
-            <button class="button" type="submit">Order Now</button>
+            <router-link to="./order-form"><button class="button" type="submit">Order Now</button></router-link>
         </div>
     </form>
     <h1 v-else>Loading...</h1>

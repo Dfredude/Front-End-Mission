@@ -6,14 +6,8 @@ export default {
         }
     },
     created() {
-        
-        let params = window.location.href.slice(window.location.href.search("order-form")).split('?')[1]
-        this.cakes = params.split('&').map((cake) => {
-            return cake.split('=')[0]
-        })
-        this.cakes = this.cakes.map((cake)=>{
-            return `${cake.replace(/\+/g, ' ')}`
-        })
+        this.cakes = this.$store.getters.cache
+        console.log(this.cakes);
     },
     methods: {
         submit() {

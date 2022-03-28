@@ -6,9 +6,26 @@
                 commits: null
             }
         },
+        created() {
+        },
         props: {
             cakes: Array,
             inputCheck: Function
+        },
+        methods: {
+            inputUpdate(event){
+                const target = event.target
+                if (target.checked === true) {
+                    this.$store.commit("mutateCache" ,(cache) => {
+                        cache.push(target.name)
+                    })
+                } else if (target.checked === false){
+                    this.$store.commit("mutateCache" ,(cache) => {
+                        cache.splice(cache.indexOf(target.name), 1)
+                    })
+                }
+                this.inputCheck()
+            }
         },
     }
 
@@ -22,7 +39,7 @@
             <div>
                 <h4>Add to cart</h4>
                 <label class="container">
-                    <input :name="name" type="checkbox" v-on:change="inputCheck">
+                    <input :name="name" type="checkbox" v-on:change="inputUpdate">
                     <span class="checkmark"></span>
                 </label>
             </div>

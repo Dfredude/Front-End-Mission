@@ -16,7 +16,8 @@ export const store = createStore({
         e_mail: "jdoe@mail.com",
         cakes: ["Vietnamese Cream Caramel Flan", "Salted Egg Sponge Cake - Bong Lan Trung Muoi"],
         comments: "test"
-      }]
+      }],
+      cache: []
     }
   },
   mutations: {
@@ -25,7 +26,20 @@ export const store = createStore({
     },
     shiftorder(state){
       state.orders.shift()
+    },
+    addCache(state, item){
+      state.cache.push(item)
+    },
+    popCache(state){
+      state.cache.pop()
+    },
+    mutateCache(state, func){
+      func(state.cache)
     }
+  },
+  getters: {
+    cacheLen(state){ return state.cache.length },
+    cache(state) { return state.cache }
   }
 })
   let routes
