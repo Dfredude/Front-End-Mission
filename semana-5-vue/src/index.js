@@ -35,6 +35,9 @@ export const store = createStore({
     },
     mutateCache(state, func){
       func(state.cache)
+    },
+    resetCache(state){
+      state.cache = []
     }
   },
   getters: {

@@ -30,7 +30,6 @@ export default {
                  this.loading = false
                 },
             onInputChange() {
-                console.log(this.$store.getters.cacheLen); 
                 if (this.$store.getters.cacheLen>0){
                     this.valid_input = true
                 } else this.valid_input = false
