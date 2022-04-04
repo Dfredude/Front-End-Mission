@@ -15,16 +15,38 @@ export default {
 <template>
     <section>
         <h1>Pending orders:</h1>
-        <div id="orders" :key="name" v-for="{ name, phone, cakes } in orders">
-            <h2>{{ name }}</h2>
-            <h3>{{ phone }}</h3>
-            <h4 :key="cake" v-for="cake in cakes">{{ cake }}</h4>
+        <div id="orders">
+            <table>
+                <thead>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Order</th>
+                    <th>Price</th>
+                    <th>Order Status</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>651651</td>
+                        <td>John Doe</td>
+                        <td>Cheesecake</td>
+                        <td>$5</td>
+                        <td>Pending</td> 
+                    </tr>
+                    <tr :key="name" v-for="{ name, phone, cakes } in orders">
+                        <td>{{ phone }}</td>
+                        <td>{{ name }}</td>
+                        <td><h4 :key="cake" v-for="cake in cakes">{{ cake }}</h4></td>
+                        <td>$5</td>
+                        <td>Pending</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 </template>
 
 <style scoped>
-    h1, h2, h3, h4{
+    *, h1, h2, h3, h4{
         color: black;
     }
 
@@ -44,5 +66,10 @@ export default {
         justify-content: space-around;
         align-items: center;
     }
+
+    table, td, th{
+        border: 1px solid black;
+    }
+    
 
 </style>

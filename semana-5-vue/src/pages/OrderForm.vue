@@ -64,8 +64,9 @@ export default {
             </li>
         </ul>
         <label class="cakes" for="cakes">Your order summary:</label>
-            <div>
-                <h3 v-bind:key="cake" v-for="cake of cakes">{{ cake }}</h3>
+            <div class="cake" v-bind:key="cake" v-for="cake of cakes">
+                <h3>{{ cake }}</h3>
+                <h3>$5</h3>
             </div>
         <button class="button" type="submit" v-on:click="submit">Order Now</button>
     </div>
@@ -100,10 +101,15 @@ export default {
 
     .cakes {
         margin: 15px 0 5px;
-        display: flex;
-        flex-direction: column;
         font-size:xx-large;
         color: var(--chocolate-font);
+    }
+
+    .cake {
+        display: flex;
+        flex-direction: row;
+        width: 600px;
+        justify-content: space-between;
     }
 
     div>h3 {
