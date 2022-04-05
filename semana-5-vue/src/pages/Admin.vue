@@ -14,15 +14,15 @@ export default {
 
 <template>
     <section>
-        <h1>Pending orders:</h1>
+        <h1>Incoming Orders</h1>
         <div id="orders">
             <table>
                 <thead>
-                    <th>Order ID</th>
-                    <th>Customer</th>
-                    <th>Order</th>
-                    <th>Price</th>
-                    <th>Order Status</th>
+                    <th>Order ID <img class="icon" src="../assets/images/down-arrow.png" alt="down arrow"> </th>
+                    <th>Customer <img class="icon" src="../assets/images/down-arrow.png" alt="down arrow"> </th>
+                    <th>Order <img class="icon" src="../assets/images/down-arrow.png" alt="down arrow"> </th>
+                    <th>Price <img class="icon" src="../assets/images/down-arrow.png" alt="down arrow"> </th>
+                    <th>Order Status <img class="icon" src="../assets/images/down-arrow.png" alt="down arrow"> </th>
                 </thead>
                 <tbody>
                     <tr :key="name" v-for="{ name, phone, cakes } in orders">
@@ -40,7 +40,8 @@ export default {
 
 <style scoped>
     *, h1, h2, h3, h4{
-        color: black;
+        /* color: var(--chocolate-background-color); */
+        color: var(--chocolate-font)
     }
 
     h1 {
@@ -60,9 +61,22 @@ export default {
         align-items: center;
     }
 
-    table, td, th{
-        border: 1px solid black;
+    .icon {
+        width: 12px;
     }
+
+    table{
+        margin-top: 30px;
+        border-collapse: collapse;
+    }
+
+    th {
+        border-bottom: 1px solid black;
+    }
+    th, td {
+        padding: 10px 20px;
+    }
+    
     
 
 </style>
