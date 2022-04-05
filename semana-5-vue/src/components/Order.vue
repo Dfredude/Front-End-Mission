@@ -16,7 +16,7 @@ export default {
     created() {
         
         this.fetchData()
-        
+        this.$store.commit('resetCache')
         
     },
     components: {

@@ -7,7 +7,6 @@ export default {
     },
     created() {
         this.cakes = this.$store.getters.cache
-        this.$store.commit('resetCache')
     },
     methods: {
         submit() {
