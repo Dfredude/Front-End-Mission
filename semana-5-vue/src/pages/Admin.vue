@@ -25,13 +25,6 @@ export default {
                     <th>Order Status</th>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>651651</td>
-                        <td>John Doe</td>
-                        <td>Cheesecake</td>
-                        <td>$5</td>
-                        <td>Pending</td> 
-                    </tr>
                     <tr :key="name" v-for="{ name, phone, cakes } in orders">
                         <td>{{ phone }}</td>
                         <td>{{ name }}</td>

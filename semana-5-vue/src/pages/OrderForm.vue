@@ -12,8 +12,21 @@ export default {
     methods: {
         submit() {
             const order = this.getInput()
-            this.$store.commit('addOrder', order)
-            this.submitted = true
+            let valid_input = true;
+            for (let item in order){
+                console.log(order[item])
+                if (order[item] === '' && item != "comments"){
+                    valid_input = false  
+                    break 
+                }
+            }
+            if (valid_input){
+                this.$store.commit('addOrder', order)
+                this.submitted = true
+            } else {
+                const span = document.getElementsByTagName('span')[0]
+                span.innerHTML = 'Please fill out the form!'
+            }
             
         },
         getInput(){
@@ -69,6 +82,7 @@ export default {
                 <h3>$5</h3>
             </div>
         <button class="button" type="submit" v-on:click="submit">Order Now</button>
+        <span></span>
     </div>
     <div v-else>
         <h1>Order placed! Thank you for your purchase</h1>
@@ -117,6 +131,10 @@ export default {
     }
     button {
         margin-top: 10px;
+    }
+
+    span {
+        margin-top: 20px;
     }
 
 </style>
