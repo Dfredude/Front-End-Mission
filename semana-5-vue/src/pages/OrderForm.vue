@@ -109,7 +109,7 @@ export default {
     li {
         display: inherit;
         flex-direction: column;
-        width: 15vw;
+        width: 150pt;
         color: black;
     }
 
